@@ -1,0 +1,32 @@
+# 클로저(closure) : scope에 제약을 받지 않는 변수를 포함하고 있는 코드 블록이다.
+# 내부함수의 주소를 반환함으로 해서 함수 내의 지역변수를 함수 밖에서 참조 가능
+
+def funcTimes(a, b):
+    c = a * b
+    return c
+
+print(funcTimes(2, 3))
+
+kbs = funcTimes(2, 3)
+print(kbs)
+kbs = funcTimes
+print(kbs)
+print(kbs(2, 3))
+print(id(kbs), id(funcTimes))
+
+del funcTimes
+# funcTimes()
+print(kbs(2, 3))
+
+mbc = sbs = kbs
+print(mbc(2, 3))
+# -------------------------------------
+print('클로저를 사용하지 않은 경우 ---')
+def out():
+    count = 0
+    def inn():
+        count += 1
+    inn()
+    
+out()
+
