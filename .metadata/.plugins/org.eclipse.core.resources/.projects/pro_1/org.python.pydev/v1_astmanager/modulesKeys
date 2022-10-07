@@ -1,1 +1,16 @@
 MODULES_MANAGER_V3
+etc.__init__|C:\work\jsou\pro_1\etc\__init__.py
+etc.mymodule2|C:\work\jsou\pro_1\etc\mymodule2.py
+etc.mymodule3|C:\work\jsou\pro_1\etc\mymodule3.py
+pack2.__init__|C:\work\jsou\pro_1\pack2\__init__.py
+pack2.func4|C:\work\jsou\pro_1\pack2\func4.py
+pack2.func5_closure|C:\work\jsou\pro_1\pack2\func5_closure.py
+pack2.func6|C:\work\jsou\pro_1\pack2\func6.py
+pack2.func7_decorator|C:\work\jsou\pro_1\pack2\func7_decorator.py
+pack2.func8_recursive|C:\work\jsou\pro_1\pack2\func8_recursive.py
+pack2.module1|C:\work\jsou\pro_1\pack2\module1.py
+pack2.module2_main|C:\work\jsou\pro_1\pack2\module2_main.py
+pack2.module3_game|C:\work\jsou\pro_1\pack2\module3_game.py
+pack2.module4_opencv|C:\work\jsou\pro_1\pack2\module4_opencv.py
+pack2.mymodule1|C:\work\jsou\pro_1\pack2\mymodule1.py
+pack2.mymodule3_graphic|C:\work\jsou\pro_1\pack2\mymodule3_graphic.py
