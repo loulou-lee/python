@@ -3,6 +3,12 @@ etc.__init__|C:\work\jsou\pro_1\etc\__init__.py
 etc.mymodule2|C:\work\jsou\pro_1\etc\mymodule2.py
 etc.mymodule3|C:\work\jsou\pro_1\etc\mymodule3.py
 pack2.__init__|C:\work\jsou\pro_1\pack2\__init__.py
+pack2.class1|C:\work\jsou\pro_1\pack2\class1.py
+pack2.class2|C:\work\jsou\pro_1\pack2\class2.py
+pack2.class4_main|C:\work\jsou\pro_1\pack2\class4_main.py
+pack2.class5_has_a|C:\work\jsou\pro_1\pack2\class5_has_a.py
+pack2.class6_has_a|C:\work\jsou\pro_1\pack2\class6_has_a.py
+pack2.class7_lotto|C:\work\jsou\pro_1\pack2\class7_lotto.py
 pack2.func4|C:\work\jsou\pro_1\pack2\func4.py
 pack2.func5_closure|C:\work\jsou\pro_1\pack2\func5_closure.py
 pack2.func6|C:\work\jsou\pro_1\pack2\func6.py
@@ -14,3 +20,5 @@ pack2.module3_game|C:\work\jsou\pro_1\pack2\module3_game.py
 pack2.module4_opencv|C:\work\jsou\pro_1\pack2\module4_opencv.py
 pack2.mymodule1|C:\work\jsou\pro_1\pack2\mymodule1.py
 pack2.mymodule3_graphic|C:\work\jsou\pro_1\pack2\mymodule3_graphic.py
+pack2.practice|C:\work\jsou\pro_1\pack2\practice.py
+pack3.__init__|C:\work\jsou\pro_1\pack3\__init__.py
