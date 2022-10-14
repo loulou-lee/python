@@ -6,7 +6,7 @@
 import threading, time
 
 def run(id):
-    for i in range(1, 101):
+    for i in range(1, 51):
         print('id:{} --> {}'.format(id, i))
         time.sleep(0.2)
         
@@ -20,5 +20,7 @@ th1 = threading.Thread(target=run, args=('일',))
 th2 = threading.Thread(target=run, args=('이',))
 th1.start()
 th2.start()
+th1.join() #메인 스레드가 대기 상태  해당 쓰레드가 종료할 때까지 대기합니다?
+th2.join()
 
 print('프로그램 종료')

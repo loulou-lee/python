@@ -1,9 +1,0 @@
-# 사용자 작성 모듈
-print('뭔가를 하다가...')
-
-# 다른 모듈의 멤버 호출
-list1 = [1, 3]
-list2 = [2, 4]
-
-import pack2.mymodule1
-pack2.mymodule1.listHap(list1, list2)

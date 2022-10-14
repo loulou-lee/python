@@ -11,7 +11,7 @@
 print('뭔가를 하다가 모듈의 멤버인 클래스를 선언하기')
 
 class TestClass:     # prototype, 원형클래스 객체 생성, 고유의 이름 공간을 확보
-aa = 1 # 멤버변수(멤버필드), public
+    aa = 1 # 멤버변수(멤버필드), public
 
 def __init__(self): # 생성자
      print('생성자')
