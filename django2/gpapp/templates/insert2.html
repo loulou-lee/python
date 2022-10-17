@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+자료 입력<p/>
+<form action="/gptest/insert2" method="post">{% csrf_token %}
+<!-- get방식 일때는 보안을 포기한거라 토큰이 필요없다 post방식일 때 필요 -->
+<!-- settings의 "django.middleware.csrf.CsrfViewMiddleware",를 빼면 토큰필요없음
+<!-- 요청이 들어오면 insertprocess에서 처리 -->
+	이름 : <input type="text" name="name">
+	<input type="submit" value="확인">
+</form>
+</body>
+</html>

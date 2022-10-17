@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function(){
+	document.querySelector("#btnOk").onclick = function(){
+		frm.submit();
+	}
+}
+</script>
+</head>
+<body>
+<table>
+  <tr>
+    <td>
+        <img src="/static/img.png" style="width: 100">
+    </td>	
+    <td>
+    <pre>
+    </pre>
+    </td>
+  <tr>
+  <td colspan="2">
+      <form action="cart" name="firm" method="post">{% csrf_token %}
+      <input type="hidden" name="name" value="자켓">
+      <input type="hidden" name="price" value="80000">
+      <input type="button" id="btnOk" value="장바구니에 담기">
+      <input type="button" value="홈으로" onclick="history.back()">
+      </form>
+</table>
+</body>
+</html>

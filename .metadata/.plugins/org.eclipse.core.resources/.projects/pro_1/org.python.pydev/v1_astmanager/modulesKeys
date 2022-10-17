@@ -40,3 +40,7 @@ pack4.th3_lock|C:\work\psou\pro_1\pack4\th3_lock.py
 pack4.th4_wait|C:\work\psou\pro_1\pack4\th4_wait.py
 pack4.th5_multiprocess|C:\work\psou\pro_1\pack4\th5_multiprocess.py
 pack4.web_scrap|C:\work\psou\pro_1\pack4\web_scrap.py
+pack5_http.__init__|C:\work\psou\pro_1\pack5_http\__init__.py
+pack5_http.httpserver1|C:\work\psou\pro_1\pack5_http\httpserver1.py
+pack6_http.__init__|C:\work\psou\pro_1\pack6_http\__init__.py
+pack6_http.httpserver2|C:\work\psou\pro_1\pack6_http\httpserver2.py

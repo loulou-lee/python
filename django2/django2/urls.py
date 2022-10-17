@@ -16,9 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from gpapp import views
+from gpapp.views import CallView
+from django.urls.conf import include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     
-    path('', views.mainFunc), # Function views
+    path('', views.mainFunc), # Function views, 간단한 것
+    path('gpapp/callget', CallView.as_view()), # Class-based views
+    path('gptest/', include('gpapp.urls')) # Including another URLconf, 가장 많이 쓰는 방법
 ]

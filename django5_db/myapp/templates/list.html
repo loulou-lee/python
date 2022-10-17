@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+{% extends 'layout.html' %}
+
+{% block content %}
+
+Article 데이터 출력<p/>
+{% if articles.count > 0 %}
+{% for a in articles %}
+   <b>{{a.code}}</b> {{a.name}} {{a.price}} {{a.pub_date}}<br>
+{% endfor %}
+{% else %}
+    <p>자료가 없어요</p>
+{% endif %}
+
+{% endblock %}
+</body>
+</html>
