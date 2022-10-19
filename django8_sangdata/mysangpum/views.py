@@ -86,10 +86,21 @@ def InsertOkFunc(request):
         return HttpResponseRedirect("/sangpum/list") # 추가 후 목록 보기
             
 def UpdateFunc(request):
-    return render(request, 'update.html')
+    data = Sangdata.objects.get(code=request.GET.get('code'))
+    return render(request, 'update.html', {'sang_one':data})
 
 def UpdateOkFunc(request):
-    pass
+    if request.method == 'POST':
+        upRec = Sangdata.objects.get(code=request.POST.get('code'))
+        upRec.code = request.POST.get('code')
+        upRec.sang = request.POST.get('sang')
+        upRec.su = request.POST.get('su')
+        upRec.dan = request.POST.get('dan')
+        upRec.save()
+        
+    return HttpResponseRedirect("/sangpum/list")
 
 def DeleteFunc(request):
-    pass
+    delRec = Sangdata.objects.get(code=request.GET.get('code'))
+    delRec.delete()
+    return HttpResponseRedirect("/sangpum/list")
