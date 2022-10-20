@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+let xhr;
+
+window.onload = function(){
+	document.querySelector("#btn1").addEventListener("click",()=>{
+		//alert('a');
+		//XmlHttpRequest 객체로 웹서버와 통신
+		xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function(){
+			// alert(xhr.readyState); // 0 ~ 4 값을 갖는다.
+			if (xhr.readyState === XMLHttpRequest.Done){
+				// alert(xhr.status);
+				if(xhr.status === 200){
+					console.log(xhr.response);
+					process1();
+				}
+			}
+			
+		}
+		
+		url = "startajax?msg=" + document.querySelector("#txtMsg").value;
+		xhr.open("GET", url, true); //true 비동기 false 동기
+		xhr.send();
+	});
+	
+	document.querySelector("#btn2").onclick = function(){
+		xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function(){
+			// alert(xhr.readyState); // 0 ~ 4 값을 갖는다.
+			if (xhr.readyState === XMLHttpRequest.Done){
+				// alert(xhr.status);
+				if(xhr.status === 200){		
+					process2();
+				}
+			  }
+			}
+			xhr.open("GET", "goajax", true);
+			xhr.send();
+	}
+}
+
+function process1(){
+	//alert(xhr.responseText);
+	let parseData = JSON.parse(xhr.responseText)
+	document.querySelector("#showData1").innerText = xhr.responseText;
+}
+
+function process2(){
+	//alert(xhr.responseText);
+	let parseData2 = JSON.parse(xhr.responseText)
+	let str = "";
+	for(let i=0; i<parseData2.length; i++){
+		str += parseData2[i].irum + " " + parseData2[i].nai + "<br>";
+	}
+	document.querySelector("#showData2").innerHTML = str;
+}
+</script>
+</head>
+<body>
+Ajax 연습<p/>
+<textarea cols="50" rows="5"></textarea>
+<br>
+자료 입력 : <input type="text" id="txtMsg" value="korea"/>
+<button id="btn1">Ajax test1</button>
+<br>
+<div id="showData1"></div>
+<hr>
+<button id="btn2">Ajax test2</button>
+<div id="showData2"></div>
+
+</body>
+</html>
