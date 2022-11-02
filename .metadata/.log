@@ -6016,3 +6016,6 @@ java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke "org.e
 Caused by: java.lang.NullPointerException: Cannot invoke "org.eclipse.ui.console.IOConsole.newOutputStream()" because "console" is null
 	at org.python.pydev.django.debug.ui.actions.DjangoAction.launchDjangoCommand(DjangoAction.java:146)
 	... 30 more
+
+!ENTRY org.python.pydev.shared_core 1 1 2022-10-20 18:28:06.686
+!MESSAGE Not saving ast manager for: P/django9_board2. No write area available.

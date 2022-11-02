@@ -16,7 +16,7 @@ def insertprocessFunc(request):
         name = request.GET.get("name") # java : request.getParameter("name")
         #java에서는 get과 post방식 똑같이 받지만 django는 다르게 받는다
         print(name)
-        return render(request, 'list.html', {'myname':name})
+        return render(request, 'list.html', {'myname':name, })
 
 def insertFunc2(request):
     if request.method == 'GET':
