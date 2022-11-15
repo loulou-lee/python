@@ -7,6 +7,8 @@
 import statsmodels.api as sm
 from sklearn.datasets import make_regression
 import numpy as np
+from yapf.yapflib.pytree_utils import CopyYapfAnnotations
+import pandas as pd
 
 np.random.seed(12)
 
@@ -34,9 +36,44 @@ from sklearn.linear_model import LinearRegression
 
 model = LinearRegression()
 fit_model = model.fit(xx, yy) # 이미 수집된 학습 데이터로 모형 추정 : 절편, 기울기 얻음(내부적으로 최소 제곱법)
-print('기울기(slope, w) : ', fit_model.coef_)
-print('절편(bias, b) : ', fit_model.intercept_)
+print('기울기(slope, w) : ', fit_model.coef_) # coef 회귀계수, 기울기
+print('절편(bias, b) : ', fit_model.intercept_) # y 절편
 # 예측값 확인 함수로 미지의 feature에 label을 예측
-print(xx[[0]]) # 
-y_new = fit_model.predict(xx[0])
+print(xx[[0]]) # [-1.70073563]
+y_new = fit_model.predict(xx[[0]]) # sklearn은 입력값을 2차원으로 입력해야한다.
+print('y_new(예측값) : ', y_new)
+print('실제값 : ', yy[0])
+
+y_new2 = fit_model.predict([[33]])
+print('y_new2(예측값) : ', y_new2)
+
+print()
+# 방법3 : ols를 사용. model O - 잔차제곱합(RSS)을 최소화하는 가중치 벡터를 행렬미분으로 구하는 방법 == 최소제곱법
+import statsmodels.formula.api as smf
+import pandas as pd
+
+print(xx.shape) # (50, 1)
+x1 = xx.flatten() # 차원축소함수
+print(x1.shape) # (50,)
+y1 = yy
+
+data = np.array([x1, y1])
+df = pd.DataFrame(data.T)
+df.columns = ['x1', 'y1']
+print(df.head(3))
+
+model2 = smf.ols(formula='y1 ~ x1', data=df).fit()
+print(model2.summary())
+
+# 예측값 확인 함수
+print(x1[:2])
+new_df = pd.DataFrame({'x1':[-1.70073563 -0.57794537]}) # 기존 자료를 사용하였음
+new_pred = model2.predict(new_df)
+print('new_pred : \n', new_pred)
+print('실제값 : \n', df.y1[:2])
+
+# 전혀 새로운 x 값에 대한 예측
+new_df2 = pd.DataFrame({'x1':[33.0, -1.234]})
+new_pred2 = model2.predict(new_df2)
+print('new_pred2 : \n', new_pred2)
 
