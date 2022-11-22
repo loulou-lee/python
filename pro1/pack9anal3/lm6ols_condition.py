@@ -62,7 +62,7 @@ print('***' * 30)
 fitted = lm_mul.predict(advdf.iloc[:, 0:2])
 residual = advdf['sales'] - fitted # 잔차 : 표본 데이터의 예측값과 실제값의 차이
 print('residual : ', residual[:3])
-print(np.mean(residual))
+print(np.mean(residual)) # 1.1430856261540611e-14 w가 랜덤하게 나와서 0에 근사한값이면 맞다
 
 print()
 print('선형성 : 독립변수의 변화에 따라 종속변수도 변화하나 특정한 패턴을 가지면 좋지 않다.')
